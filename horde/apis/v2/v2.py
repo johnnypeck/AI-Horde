@@ -408,7 +408,7 @@ class TransferKudos(Resource):
         error = ret[1]
         if error != 'OK':
             raise e.KudosValidationError(user.get_unique_alias(), error)
-        return({"transfered": kudos}, 200)
+        return({"transferred": kudos}, 200)
 
 class Workers(Resource):
     @logger.catch(reraise=True)
