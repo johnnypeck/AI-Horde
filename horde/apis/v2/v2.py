@@ -713,7 +713,7 @@ class Models(Resource):
     def get(self):
         '''Returns a list of models active currently in this horde
         '''
-        return(db.get_available_models(),200)
+        return(db.get_available_models(waiting_prompts),200)
 
 
 class HordeLoad(Resource):
