@@ -1441,6 +1441,10 @@ class Database:
                 models_dict[model_name]["count"] += 1
         things_per_model = waiting_prompts.count_things_per_model()
         for model_name in things_per_model:
+            # This shouldn't happen, but I'm checking anyway
+            if model_name not in models_dict:
+                logger.warning(f"Tried to match non-existent wp model {model_name} to worker models. Skipping.")
+                continue
             models_dict[model_name]['queued'] = things_per_model[model_name]
             total_performance_on_model = models_dict[model_name]['count'] * models_dict[model_name]['performance']
             # We don't want a division by zero when there's no workers for this model.
