@@ -679,7 +679,7 @@ class PromptsIndex(Index):
                 current_wp_queue = wp.n + wp.count_processing_gens()["processing"]
                 if current_wp_queue > 0:
                     things_per_model[model] = things_per_model.get(model,0) + wp.things
-            things_per_model[model] = round(things_per_model[model],2)
+            things_per_model[model] = round(things_per_model.get(model,0),2)
         return(things_per_model)
 
                 
