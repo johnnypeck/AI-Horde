@@ -707,7 +707,6 @@ class FindUser(Resource):
 
 
 class Models(Resource):
-    decorators = [limiter.limit("30/minute")]
     @logger.catch(reraise=True)
     @api.marshal_with(models.response_model_active_model, code=200, description='List All Active Models', as_list=True)
     def get(self):
