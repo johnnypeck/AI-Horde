@@ -228,7 +228,7 @@ class News(News):
     STABLE_HORDE_NEWS = [
         {
             "date_published": "2022-10-25",
-            "newspiece": "Another [Discord Bot for Stable Horde integration]9https://github.com/ZeldaFan0225/Stable_Horde_Discord) has appeared!",
+            "newspiece": "Another [Discord Bot for Stable Horde integration](https://github.com/ZeldaFan0225/Stable_Horde_Discord) has appeared!",
             "importance": "Information"
         },
         {
