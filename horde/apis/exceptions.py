@@ -6,6 +6,11 @@ class MissingPrompt(wze.BadRequest):
         self.specific = "You cannot specify an empty prompt."
         self.log = f"User '{username}' sent an empty prompt. Aborting!"
 
+class CorruptPrompt(wze.BadRequest):
+    def __init__(self, username, ip, prompt):
+        self.specific = "This prompt appears to violate our terms of service and will be reported. Please contact us if you think this is an error."
+        self.log = f"User '{username}' with IP '{ip}' sent an a corrupt prompt: '{prompt}'. Aborting!"
+
 class KudosValidationError(wze.BadRequest):
     def __init__(self, username, error_message):
         self.specific = error_message

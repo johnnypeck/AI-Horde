@@ -19,6 +19,7 @@ class Suspicions(IntEnum):
     UNREASONABLY_FAST = 5
     USERNAME_LONG = 6
     USERNAME_PROFANITY = 7
+    CORRUPT_PROMPT = 8
 
 suspicion_logs = {
     Suspicions.WORKER_NAME_LONG: 'Worker Name too long',
@@ -28,7 +29,8 @@ suspicion_logs = {
     Suspicions.EXTREME_MAX_PIXELS: 'Worker claiming they can generate too many pixels',
     Suspicions.UNREASONABLY_FAST: 'Generation unreasonably fast ({})',
     Suspicions.USERNAME_LONG: 'Username too long',
-    Suspicions.USERNAME_PROFANITY: 'Profanity in username'
+    Suspicions.USERNAME_PROFANITY: 'Profanity in username',
+    Suspicions.CORRUPT_PROMPT: 'Corrupt Prompt detected'
 }
 
 class WaitingPrompt:
