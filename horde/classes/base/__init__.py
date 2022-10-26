@@ -1441,7 +1441,7 @@ class Database:
                 models_dict[model_name]["count"] += 1
         things_per_model = waiting_prompts.count_things_per_model()
         for model_name in things_per_model:
-            models_dict[model_name]['load'] = things_per_model[model_name]
+            models_dict[model_name]['queued'] = things_per_model[model_name]
             total_performance_on_model = models_dict[model_name]['count'] * models_dict[model_name]['performance']
             # We don't want a division by zero when there's no workers for this model.
             if total_performance_on_model > 0:
