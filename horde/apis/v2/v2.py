@@ -575,7 +575,9 @@ class Users(Resource):
     def get(self):
         '''A List with the details and statistic of all registered users
         '''
-        users_list = [user.get_details() for user in db.users.values()]
+        # To avoid the the dict changing size while we're iterating it
+        all_users = list(db.users.values())
+        users_list = [user.get_details() for user in all_users]
         return(users_list,200)
 
 
